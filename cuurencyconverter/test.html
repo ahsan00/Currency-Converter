@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+
+  </body>
+</html>
+
+
+<?php
+$select="select * from tbl_assign where id='".$_GET['uid']."'";
+$q=mysql_query($select) or die($select);
+$row=mysql_fetch_array($q);
+?>
+
+<select name="sclient" id="sclient" class="reginput"/>
+<option value="">Select Client</option>
+<?php $s="select * from tbl_new_user where type='client'";
+$q=mysql_query($s) or die($s);
+while($rw=mysql_fetch_array($q))
+{ ?>
+<option value="<?php echo $rw['login_name']; ?>"<?php if($row['clientname']==$rw['login_name']) echo 'selected="selected"'; ?>><?php echo $rw['login_name']; ?></option>
+<?php } ?>
+</select>
+
+
+<option value="<?php echo $rows['category'];?>"<?php echo $rows['category'];?></option>
+
+
+
+<select id="example-getting-started" multiple="multiple" name="category">
+
+    <?php
+    $query = "select * from mine";
+    $results = mysql_query($query);
+
+    while ($rows = mysql_fetch_assoc(@$results)){
+    ?>
+    <option value="<?php echo $rows['category'];?>"><?php echo $rows['category'];?></option>
+
+    <?php
+    }
+    ?>
+</select>

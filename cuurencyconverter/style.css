@@ -1,0 +1,14 @@
+body{
+
+  margin-top: 70px;
+  background: #333;
+  color:#fff;
+}
+card1{
+  background: #EEEE;
+  color: #EEEEEE;
+}
+.clear
+{
+  overflow: hidden;
+}
